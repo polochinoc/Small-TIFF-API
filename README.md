@@ -9,6 +9,7 @@ Python 3+ and the following libraries:
 - Rasterio (rasterio)
 - aiofiles (aiofiles)
 - PIL (Pillow)
+- NumPy (numpy)
 
 ## How-to
 1. Pull the project
