@@ -11,6 +11,16 @@ Python 3+ and the following libraries:
 - PIL (Pillow)
 - NumPy (numpy)
 
+Linux
+````commandline
+sudo pip3 install -r requirements.txt
+````
+Windows 
+````commandline
+python3 -m pip install -r requirements.txt
+````
+
+
 ## How-to
 1. Pull the project
 2. Execute the main.py
@@ -20,7 +30,6 @@ Python 3+ and the following libraries:
 ## Areas for improvement
 
 ### Form-related
-- Store dependencies in a **requirements.txt** file
 - Separate routes in specific file
 - Enhance documentation
   - Path and body parameters

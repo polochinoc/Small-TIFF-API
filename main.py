@@ -1,11 +1,11 @@
-import uvicorn
 import json
-import rasterio
-import numpy
 
+import numpy
+import rasterio
+import uvicorn
+from PIL import Image, ImageEnhance, ImagePalette
 from fastapi import FastAPI, UploadFile
 from fastapi.responses import FileResponse
-from PIL import Image, ImageEnhance, ImagePalette
 
 from doc import init_doc, Palette
 
@@ -122,7 +122,8 @@ async def compute_ndvi_as_png(file: UploadFile, palette: Palette = None) -> File
         elif palette == Palette.negative:
             img.putpalette(ImagePalette.negative())
     else:
-        palette = []  # This is a funky home-made palette, hope it outlines vegetation from urban areas, bodies of water and barelands
+        palette = []  # This is a funky home-made palette, hope it outlines vegetation from urban areas, bodies of
+        # water and bare lands
         for idx in range(0, 2 ** 8):
             palette.append(min(255, 255 - int(idx * idx / 255.0) + 75))
             palette.append(max(0, idx - int(idx * (255.0 - idx) / (255.0 + idx)) - 50))
